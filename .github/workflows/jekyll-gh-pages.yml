@@ -31,7 +31,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - run: yarn install --immutable --immutable-cache --check-cache
-      - run: npm run build
+      - run: yarn run build
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
