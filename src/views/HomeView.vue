@@ -268,6 +268,10 @@ const tableSizeCalculate = function () {
 const reload = function () {
   window.location.reload();
 };
+
+const openLink = function (url: string) {
+  window.open(url, "_blank");
+};
 </script>
 
 <template>
@@ -679,7 +683,15 @@ const reload = function () {
                   あなたは"正"解のルートをたどり、最後の答え"青"龍に到達しました！
                   おめでとうございます！
 
-                  <v-btn class="bg-blue-accent-2">ポストする（未実装）</v-btn>
+                  <v-btn
+                    class="bg-blue-accent-2"
+                    @click="
+                      openLink(
+                        'https://twitter.com/intent/tweet?text=%E6%AD%A3%E8%A7%A3%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%88%E3%82%92%E3%81%9F%E3%81%A9%E3%82%8A%E3%80%81%E6%9C%80%E5%BE%8C%E3%81%AE%E5%95%8F%E9%A1%8C%E3%81%AB%E3%80%87%E3%80%87%E3%81%A8%E8%A7%A3%E7%AD%94%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%0A%23%E5%9B%9B%E5%8D%81%E8%AC%8E%0A%0A%E3%83%97%E3%83%AC%E3%82%A4%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89%E3%81%8B%E3%82%89%0Ahttps%3A%2F%2Fkoba0124.github.io%2Fforty-riddle%2F%0A'
+                      )
+                    "
+                    >ポストする</v-btn
+                  >
                   <template v-slot:actions>
                     <v-btn
                       class="ms-auto"
@@ -702,10 +714,18 @@ const reload = function () {
 
               <v-dialog v-model="dialogGreen" width="auto">
                 <v-card title="【セイコウ】を達成しました！" class="pa-4">
-                  あなたは【しじゅうなぞ】のすべてを理解し"成功"に到達しました！
+                  あなたは【しじゅうなぞ】の"構成"を理解し"成功"に到達しました！
                   おめでとうございます！
 
-                  <v-btn class="bg-green-accent-2">ポストする（未実装）</v-btn>
+                  <v-btn
+                    class="bg-green-accent-2"
+                    @click="
+                      openLink(
+                        'https://twitter.com/intent/tweet?text=%E3%81%99%E3%81%B9%E3%81%A6%E3%81%AE%E8%AC%8E%E3%82%92%E8%A7%A3%E3%81%8D%E3%80%81%E6%88%90%E5%8A%9F%E3%82%92%E3%81%A4%E3%81%8B%E3%81%BF%E5%8F%96%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%EF%BC%81%0A%23%E5%9B%9B%E5%8D%81%E8%AC%8E%0A%0A%E3%83%97%E3%83%AC%E3%82%A4%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89%E3%81%8B%E3%82%89%0Ahttps%3A%2F%2Fkoba0124.github.io%2Fforty-riddle%2F'
+                      )
+                    "
+                    >ポストする（未実装）</v-btn
+                  >
                   <template v-slot:actions>
                     <v-btn
                       class="ms-auto"
@@ -733,7 +753,15 @@ const reload = function () {
                   あなたはルートを変"更"して、最後の答え"黄"龍に到達しました！
                   おめでとうございます！
 
-                  <v-btn class="bg-yellow-accent-2">ポストする（未実装）</v-btn>
+                  <v-btn
+                    class="bg-yellow-accent-2"
+                    @click="
+                      openLink(
+                        'https://twitter.com/intent/tweet?text=%E6%9B%B4%E3%81%AA%E3%82%8B%E3%83%AB%E3%83%BC%E3%83%88%E3%82%92%E8%A6%8B%E3%81%A4%E3%81%91%E3%80%81%E6%9C%80%E5%BE%8C%E3%81%AE%E5%95%8F%E9%A1%8C%E3%81%AB%E3%80%87%E3%80%87%E3%81%A8%E8%A7%A3%E7%AD%94%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%0A%23%E5%9B%9B%E5%8D%81%E8%AC%8E%0A%0A%E3%83%97%E3%83%AC%E3%82%A4%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89%E3%81%8B%E3%82%89%0Ahttps%3A%2F%2Fkoba0124.github.io%2Fforty-riddle%2F'
+                      )
+                    "
+                    >ポストする（未実装）</v-btn
+                  >
                   <template v-slot:actions>
                     <v-btn
                       class="ms-auto"

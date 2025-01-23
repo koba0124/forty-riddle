@@ -1,19 +1,8 @@
-# nazo40
+# しじゅうなぞはこちらから遊べます
 
-## Project setup
-```
-yarn install
-```
+https://koba0124.github.io/forty-riddle/
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+# お願い
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+この謎解きを楽しむために、Git レポジトリのソースを読む必要はありません
+（GitHub Pages で公開するために、公開設定にしているだけです）
