@@ -16,6 +16,7 @@ const isBlue = defineModel("isBlue", { default: true });
 const dialogBlue = defineModel("dialogBlue", { default: false });
 const dialogYellow = defineModel("dialogYellow", { default: false });
 const dialogGreen = defineModel("dialogGreen", { default: false });
+
 import image1 from "../assets/image1.png";
 const imageModel1 = defineModel("imageModel1", { default: image1 });
 const answers1_1 = defineModel("answers1_1", { default: "" });
@@ -35,6 +36,8 @@ const answer1 = function () {
   steps.value[2] = true;
   e1.value = 2;
 };
+const dialogHint1_1 = defineModel("dialogHint1_1", { default: false });
+const dialogHint1_2 = defineModel("dialogHint1_2", { default: false });
 
 import image2 from "../assets/image2.png";
 const imageModel2 = defineModel("imageModel2", { default: image2 });
@@ -55,6 +58,8 @@ const answer2 = function () {
   steps.value[3] = true;
   e1.value = 3;
 };
+const dialogHint2_1 = defineModel("dialogHint2_1", { default: false });
+const dialogHint2_2 = defineModel("dialogHint2_2", { default: false });
 
 import image3 from "../assets/image3.png";
 const imageModel3 = defineModel("imageModel3", { default: image3 });
@@ -77,6 +82,8 @@ const answer3 = async function () {
   await nextTick();
   tableSizeCalculate();
 };
+const dialogHint3_1 = defineModel("dialogHint3_1", { default: false });
+const dialogHint3_2 = defineModel("dialogHint3_2", { default: false });
 
 const answers4_1 = defineModel("answers4_1", { default: "" });
 const answers4_2 = defineModel("answers4_2", { default: "" });
@@ -131,6 +138,9 @@ const answer4_2 = function () {
   }
   disabled4_2.value = true;
 };
+const dialogHint4_1 = defineModel("dialogHint4_1", { default: false });
+const dialogHint4_2 = defineModel("dialogHint4_2", { default: false });
+const dialogHint4_3 = defineModel("dialogHint4_3", { default: false });
 
 import image5 from "../assets/image5.png";
 const imageModel5 = defineModel("imageModel5", { default: image5 });
@@ -171,6 +181,9 @@ const answer5_2 = function () {
   }
   disabled5_2.value = true;
 };
+const dialogHint5_1 = defineModel("dialogHint5_1", { default: false });
+const dialogHint5_2 = defineModel("dialogHint5_2", { default: false });
+const dialogHint5_3 = defineModel("dialogHint5_3", { default: false });
 
 import image6 from "../assets/image6.png";
 const imageModel6 = defineModel("imageModel6", { default: image6 });
@@ -211,6 +224,9 @@ const answer6_2 = function () {
   }
   disabled6_2.value = true;
 };
+const dialogHint6_1 = defineModel("dialogHint6_1", { default: false });
+const dialogHint6_2 = defineModel("dialogHint6_2", { default: false });
+const dialogHint6_3 = defineModel("dialogHint6_3", { default: false });
 
 const flag1 = defineModel("flag1", { default: false });
 const click1 = function () {
@@ -361,6 +377,50 @@ const openLink = function (url: string) {
                   </tr>
                 </tbody>
               </table>
+              <template v-slot:actions>
+                <div class="text-center pa-4">
+                  <v-btn
+                    @click="dialogHint1_1 = true"
+                    class="bg-green-accent-2"
+                  >
+                    ヒント1
+                  </v-btn>
+
+                  <v-dialog v-model="dialogHint1_1" width="auto">
+                    <v-card title="ヒント1" class="pa-4">
+                      数字のフォントは2種類あり、それぞれで違ったルールで読みます。
+                      <template v-slot:actions>
+                        <v-btn
+                          class="ms-auto"
+                          text="Ok"
+                          @click="dialogHint1_1 = false"
+                        ></v-btn>
+                      </template>
+                    </v-card>
+                  </v-dialog>
+                </div>
+                <div class="text-center pa-4">
+                  <v-btn
+                    @click="dialogHint1_2 = true"
+                    class="bg-green-accent-2"
+                  >
+                    ヒント2
+                  </v-btn>
+
+                  <v-dialog v-model="dialogHint1_2" width="auto">
+                    <v-card title="ヒント2" class="pa-4">
+                      右側のイラストは、上から「ワンマン」「K2（ケイツー）」を表しています。
+                      <template v-slot:actions>
+                        <v-btn
+                          class="ms-auto"
+                          text="Ok"
+                          @click="dialogHint1_2 = false"
+                        ></v-btn>
+                      </template>
+                    </v-card>
+                  </v-dialog>
+                </div>
+              </template>
             </v-card>
           </v-stepper-window-item>
           <v-stepper-window-item :key="`2-content`" :value="2">
@@ -396,6 +456,53 @@ const openLink = function (url: string) {
                   </tr>
                 </tbody>
               </table>
+              <template v-slot:actions>
+                <div class="text-center pa-4">
+                  <v-btn
+                    @click="dialogHint2_1 = true"
+                    class="bg-green-accent-2"
+                  >
+                    ヒント1
+                  </v-btn>
+
+                  <v-dialog v-model="dialogHint2_1" width="auto">
+                    <v-card title="ヒント1" class="pa-4">
+                      かっこの中のイラストは、上から「くろうと」「せきひん」です。
+                      <template v-slot:actions>
+                        <v-btn
+                          class="ms-auto"
+                          text="Ok"
+                          @click="dialogHint2_1 = false"
+                        ></v-btn>
+                      </template>
+                    </v-card>
+                  </v-dialog>
+                </div>
+                <div class="text-center pa-4">
+                  <v-btn
+                    @click="dialogHint2_2 = true"
+                    class="bg-green-accent-2"
+                  >
+                    ヒント2
+                  </v-btn>
+
+                  <v-dialog v-model="dialogHint2_2" width="auto">
+                    <v-card title="ヒント2" class="pa-4">
+                      矢印の先のイラストは、上から<br />
+                      「くろう」「ろうと」<br />
+                      「せきひ」「きひん」<br />
+                      「かいし」「いしゃ」を表しています。
+                      <template v-slot:actions>
+                        <v-btn
+                          class="ms-auto"
+                          text="Ok"
+                          @click="dialogHint2_2 = false"
+                        ></v-btn>
+                      </template>
+                    </v-card>
+                  </v-dialog>
+                </div>
+              </template>
             </v-card>
           </v-stepper-window-item>
           <v-stepper-window-item :key="`3-content`" :value="3">
@@ -431,6 +538,51 @@ const openLink = function (url: string) {
                   </tr>
                 </tbody>
               </table>
+              <template v-slot:actions>
+                <div class="text-center pa-4">
+                  <v-btn
+                    @click="dialogHint3_1 = true"
+                    class="bg-green-accent-2"
+                  >
+                    ヒント1
+                  </v-btn>
+
+                  <v-dialog v-model="dialogHint3_1" width="auto">
+                    <v-card title="ヒント1" class="pa-4">
+                      イラストは、上から「まくうち」「りきがく」を表しています。
+                      <template v-slot:actions>
+                        <v-btn
+                          class="ms-auto"
+                          text="Ok"
+                          @click="dialogHint3_1 = false"
+                        ></v-btn>
+                      </template>
+                    </v-card>
+                  </v-dialog>
+                </div>
+                <div class="text-center pa-4">
+                  <v-btn
+                    @click="dialogHint3_2 = true"
+                    class="bg-green-accent-2"
+                  >
+                    ヒント2
+                  </v-btn>
+
+                  <v-dialog v-model="dialogHint3_2" width="auto">
+                    <v-card title="ヒント2" class="pa-4">
+                      左側の文字列は、ある英単語を別の英単語で挟んでいます。<br />
+                      それらの英単語を和訳すると、右側のイラストの内容につながります。
+                      <template v-slot:actions>
+                        <v-btn
+                          class="ms-auto"
+                          text="Ok"
+                          @click="dialogHint3_2 = false"
+                        ></v-btn>
+                      </template>
+                    </v-card>
+                  </v-dialog>
+                </div>
+              </template>
             </v-card>
           </v-stepper-window-item>
           <v-stepper-window-item :key="`4-content`" :value="4">
@@ -596,6 +748,76 @@ const openLink = function (url: string) {
                   </tr>
                 </tbody>
               </table>
+              <template v-slot:actions>
+                <div class="text-center pa-4">
+                  <v-btn
+                    @click="dialogHint4_1 = true"
+                    class="bg-green-accent-2"
+                  >
+                    ヒント1
+                  </v-btn>
+
+                  <v-dialog v-model="dialogHint4_1" width="auto">
+                    <v-card title="ヒント1" class="pa-4">
+                      「ゴールにたどり着けないような誤った選択肢を選ぶと、その道は消えます。」<br />
+                      と、いうルールは、この問題の迷路に対しても使うことができます。
+                      <template v-slot:actions>
+                        <v-btn
+                          class="ms-auto"
+                          text="Ok"
+                          @click="dialogHint4_1 = false"
+                        ></v-btn>
+                      </template>
+                    </v-card>
+                  </v-dialog>
+                </div>
+                <div class="text-center pa-4">
+                  <v-btn
+                    @click="dialogHint4_2 = true"
+                    class="bg-yellow-accent-2"
+                    v-if="mainStore.isBlue"
+                  >
+                    ヒント2
+                  </v-btn>
+
+                  <v-dialog v-model="dialogHint4_2" width="auto">
+                    <v-card title="ヒント2" class="pa-4">
+                      この問題からは答えを2つ導くことができます。<br />
+                      2つめの答えを導くためには、あなた自身の手で問題を変える必要があります。
+                      <template v-slot:actions>
+                        <v-btn
+                          class="ms-auto"
+                          text="Ok"
+                          @click="dialogHint4_2 = false"
+                        ></v-btn>
+                      </template>
+                    </v-card>
+                  </v-dialog>
+                </div>
+                <div class="text-center pa-4">
+                  <v-btn
+                    @click="dialogHint4_3 = true"
+                    class="bg-yellow-accent-2"
+                    v-if="mainStore.isBlue"
+                  >
+                    ヒント3
+                  </v-btn>
+
+                  <v-dialog v-model="dialogHint4_3" width="auto">
+                    <v-card title="ヒント3" class="pa-4">
+                      過去の問題で使用した「法則」をこの問題にも適用できないか考えてみましょう。<br />
+                      時には、あえて誤った選択をすることによって道が開けることもあるかもしれません。
+                      <template v-slot:actions>
+                        <v-btn
+                          class="ms-auto"
+                          text="Ok"
+                          @click="dialogHint4_3 = false"
+                        ></v-btn>
+                      </template>
+                    </v-card>
+                  </v-dialog>
+                </div>
+              </template>
             </v-card>
           </v-stepper-window-item>
           <v-stepper-window-item :key="`5-content`" :value="5">
@@ -629,6 +851,74 @@ const openLink = function (url: string) {
                   </tr>
                 </tbody>
               </table>
+              <template v-slot:actions>
+                <div class="text-center pa-4">
+                  <v-btn
+                    @click="dialogHint5_1 = true"
+                    class="bg-green-accent-2"
+                  >
+                    ヒント1
+                  </v-btn>
+
+                  <v-dialog v-model="dialogHint5_1" width="auto">
+                    <v-card title="ヒント1" class="pa-4">
+                      a,b,cはそれぞれ漢字1文字を表しています。<br />
+                      d,eはそれらの組み合わせによる2字の熟語になります。
+                      <template v-slot:actions>
+                        <v-btn
+                          class="ms-auto"
+                          text="Ok"
+                          @click="dialogHint5_1 = false"
+                        ></v-btn>
+                      </template>
+                    </v-card>
+                  </v-dialog>
+                </div>
+                <div class="text-center pa-4">
+                  <v-btn
+                    @click="dialogHint5_2 = true"
+                    class="bg-green-accent-2"
+                  >
+                    ヒント2
+                  </v-btn>
+
+                  <v-dialog v-model="dialogHint5_2" width="auto">
+                    <v-card title="ヒント2" class="pa-4">
+                      聖獣とは、四獣（朱雀・白虎・青龍・玄武）そして黄龍のいずれかになります。<br />
+                      果実は、ぷりぷりで瑞々しい、あまーい果物になります。
+                      <template v-slot:actions>
+                        <v-btn
+                          class="ms-auto"
+                          text="Ok"
+                          @click="dialogHint5_2 = false"
+                        ></v-btn>
+                      </template>
+                    </v-card>
+                  </v-dialog>
+                </div>
+                <div class="text-center pa-4">
+                  <v-btn
+                    @click="dialogHint5_3 = true"
+                    class="bg-green-accent-2"
+                  >
+                    ヒント3
+                  </v-btn>
+
+                  <v-dialog v-model="dialogHint5_3" width="auto">
+                    <v-card title="ヒント3" class="pa-4">
+                      この問題からは答えを2つ導くことができます。<br />
+                      ですが、最終問題を成立させられるのはそのうち1つに定まります。
+                      <template v-slot:actions>
+                        <v-btn
+                          class="ms-auto"
+                          text="Ok"
+                          @click="dialogHint5_3 = false"
+                        ></v-btn>
+                      </template>
+                    </v-card>
+                  </v-dialog>
+                </div>
+              </template>
             </v-card>
           </v-stepper-window-item>
           <v-stepper-window-item :key="`6-content`" :value="6">
@@ -662,6 +952,75 @@ const openLink = function (url: string) {
                   </tr>
                 </tbody>
               </table>
+              <template v-slot:actions>
+                <div class="text-center pa-4">
+                  <v-btn
+                    @click="dialogHint6_1 = true"
+                    class="bg-green-accent-2"
+                  >
+                    ヒント1
+                  </v-btn>
+
+                  <v-dialog v-model="dialogHint6_1" width="auto">
+                    <v-card title="ヒント1" class="pa-4">
+                      この問題を単体で解くことはできなさそうです。<br />
+                      過去の問題を見直してみましょう。
+                      <template v-slot:actions>
+                        <v-btn
+                          class="ms-auto"
+                          text="Ok"
+                          @click="dialogHint6_1 = false"
+                        ></v-btn>
+                      </template>
+                    </v-card>
+                  </v-dialog>
+                </div>
+                <div class="text-center pa-4">
+                  <v-btn
+                    @click="dialogHint6_2 = true"
+                    class="bg-green-accent-2"
+                  >
+                    ヒント2
+                  </v-btn>
+
+                  <v-dialog v-model="dialogHint6_2" width="auto">
+                    <v-card title="ヒント2" class="pa-4">
+                      ここまで解いてきた問題で、正解以外の選択肢は塗りつぶされています。<br />
+                      塗りつぶされずに残った選択肢を見直してみましょう。<br />
+                      <template v-slot:actions>
+                        <v-btn
+                          class="ms-auto"
+                          text="Ok"
+                          @click="dialogHint6_2 = false"
+                        ></v-btn>
+                      </template>
+                    </v-card>
+                  </v-dialog>
+                </div>
+                <div class="text-center pa-4">
+                  <v-btn
+                    @click="dialogHint6_3 = true"
+                    class="bg-green-accent-2"
+                  >
+                    ヒント3
+                  </v-btn>
+
+                  <v-dialog v-model="dialogHint6_3" width="auto">
+                    <v-card title="ヒント3" class="pa-4">
+                      正解の選択肢は、①②③④⑤がそれぞれ1つずつ残っているようです。<br />
+                      〇1つが1文字を表すとすると③④⑤はそれぞれ「り」「ゆ」「う」に対応します<br />
+                      「③かいしゃ」「④うすずみ」「⑤ちょうてん」から、「③＝り」「④＝ゆ」「⑤＝う」を導く方法を考えてみましょう。
+                      <template v-slot:actions>
+                        <v-btn
+                          class="ms-auto"
+                          text="Ok"
+                          @click="dialogHint6_3 = false"
+                        ></v-btn>
+                      </template>
+                    </v-card>
+                  </v-dialog>
+                </div>
+              </template>
             </v-card>
           </v-stepper-window-item>
         </v-stepper-window>
